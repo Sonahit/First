@@ -1,0 +1,81 @@
+class tekst{
+    String tekst = "desyat porosyat golaut na lyhege a";
+    int max = 0;
+    int min = 255;
+    int z;
+    String tekst2[] = new String[tekst.length()];
+    String tekst3[];
+
+    void splitt (){
+    int i = 0;
+    boolean end = false;
+    while(!end){
+        end = false;
+      for(String retval : tekst.split(" ") ) {
+          tekst2[i] = retval;
+          i++;
+          end = true;
+      }
+     for(i = 0; i < tekst.length(); i++){
+         if(tekst2[i] == null) tekst2[i] = "";
+     }
+    }
+     
+}
+
+    int findmin (int i){
+    for (int x = 0; x < tekst.length() ; x++){
+     if (tekst2[i] == "") break;
+           if (tekst2[i].length() < min) {
+              min = tekst2[x].length();
+            }
+        }
+    return min;
+     }
+    
+    void napolnenie(int i){
+      if (min == tekst2[i].length()) {
+          z++;
+      }
+    tekst3 = new String [z];
+     }
+
+
+   void zapolnenie(){
+    int z = 0;
+     for (int i = 0; i < tekst.length(); i++){
+       if (min == tekst2[i].length()) {
+           tekst3[z] = tekst2[i];
+           z++;
+         if (z == this.z) break;
+        }
+    }
+}
+   
+   
+    String vivod (int i){
+       return tekst3[i];
+    }
+}
+
+
+
+public class Test { 
+
+public static void main ( String args []) { 
+    tekst Min = new tekst();
+    Min.splitt();
+    for (int i = 0; i < Min.tekst.length(); i++){
+    Min.findmin(i);
+    }
+    for (int i = 0; i < Min.tekst.length(); i++){
+    Min.napolnenie(i);
+    }
+    Min.zapolnenie();
+    System.out.println("Minimum number of symbols" + " = " + Min.min);
+    System.out.println("Words that fits within this number");
+    for (int i = 0; i < Min.z; i++){
+       System.out.println(Min.vivod(i));
+    }
+   }
+}
