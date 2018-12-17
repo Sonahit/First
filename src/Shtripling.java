@@ -14,13 +14,14 @@ class A {
           test = test + text.charAt(i);
 	    }
 	return test.equals(text);
-	
     }
 		
 	public boolean SamePrefix (String text, String text1, String prefix) {
 		
 		return text.startsWith(prefix) & text1.startsWith(prefix);
 	}
+	
+	
 	public BigDecimal density (BigDecimal weight, BigDecimal volume, BigDecimal min, BigDecimal max) {
 		BigDecimal density = weight.divide(volume);
 		System.out.println("density " + density);
@@ -32,12 +33,13 @@ class A {
 		System.out.println("density.max(max) " + density.max(max));
 		System.out.println("density.compareTo(density.min(min)) " + density.compareTo(density.min(min)));
 		System.out.println("density.compareTo(density.max(max)) " + density.compareTo(density.max(max)) );
-		if(       (density.compareTo(density.min(min)) == 1
+		if     (  (density.compareTo(density.min(min)) == 1 
 				|| density.compareTo(density.min(min)) == 0)
 				&& (density.compareTo(density.max(max)) == -1 
 				|| density.compareTo(density.max(max)) == 0) ) return density;
 		return null;
 	}
+	
 }
 
 public class Shtripling {
