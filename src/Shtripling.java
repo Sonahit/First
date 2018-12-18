@@ -43,13 +43,27 @@ class A {
 		 int length2 = length;
 	 if (length >= string1.length()) length1 = string1.length();
 	 if (length >= string2.length()) length2 = string2.length();
-	 return string1.substring(index, length1).equals(string2.substring(index, length2));
+	 return string1.substring(index, length1).equals(string2.substring(index, length2)) 
+			 || string1.substring(index, length2).equals(string2.substring(index, length1));
 	 
 	 }
 	public boolean SamePrefix (String text, String text1, String prefix) {
 		
 		return text.startsWith(prefix) & text1.startsWith(prefix);
 	}
+	
+	 public static StringBuilder removeCharacters(String string, int[] positions) {
+			
+		 StringBuilder strb = new StringBuilder(string);
+		 
+         for(int i = positions.length - 1; i > -1 ; i--) {
+        	if (strb.equals("")) break;
+        	 strb.delete(i , i);
+
+         }
+
+		   return strb;
+	 }
 	
 	 public static String makeCsvStringFromDoubles(double[] array) {
 			String  str = "";
@@ -64,7 +78,36 @@ class A {
 		     }
 			 return str;
 	 }
-	
+	 public static StringBuilder insertCharacters(String string, int[] positions, char[] characters) {
+    	 int temp = 0;
+		 StringBuilder strb = new StringBuilder(string);
+		 
+         for(int i = positions.length - 1; i > -1 ; i--) {
+        	 strb.insert(positions[i], characters[i]);
+         }
+
+		   return strb;
+	 }
+	 
+	 public static boolean isSameLastStringPosition(String string1, String string2, String str) {
+			String check = "";
+			String less = "";
+			if(string1.length() >= string2.length()) {
+				check = string1;
+				less = string2;
+			}
+			else {
+				check = string2;
+				less = string1;
+			}
+        for(int i = 0; i < check.length() - str.length() + 1  ; i++) {
+        	if(check.substring(i, i + str.length()).equals(str))
+               return check.substring(i, i + str.length()).equals(less.substring(i, i + str.length()));
+        }
+	    return false;
+
+		}
+	 
 	public BigDecimal density (BigDecimal weight, BigDecimal volume, BigDecimal min, BigDecimal max) {
 		BigDecimal density = weight.divide(volume);
 		System.out.println("density " + density);
@@ -95,10 +138,14 @@ class A {
 
 public class Shtripling {
 	public static void main(String[] args) {
-       String text[] = {"Level", "test", "Racecar", "RaceCar !"};
+ /*      String text[] = {"Level", "test", "Racecar", "RaceCar !"};
        String text1 = "65432123456";
        A test = new A();
-       System.out.println(test.getLongestPalindromeIgnoreCase(text));
+       System.out.println(test.getLongestPalindromeIgnoreCase(text));*/
+		A test = new A();
+		String first = "winding";
+		String second = "winding";
+		System.out.println(test.removeCharacters("0123456789", new int[]{0, 2, 4, 6, 8}).toString());
   /*     A text = new A();
        String text1 = "Hello";
        String text2 = "Hell";

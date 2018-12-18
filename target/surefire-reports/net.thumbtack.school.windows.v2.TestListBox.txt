@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: net.thumbtack.school.windows.v2.TestListBox
 -------------------------------------------------------------------------------
-Tests run: 38, Failures: 22, Errors: 10, Skipped: 0, Time elapsed: 0.016 sec <<< FAILURE!
-testIsListBoxInsideListBox(net.thumbtack.school.windows.v2.TestListBox)  Time elapsed: 0 sec  <<< FAILURE!
+Tests run: 38, Failures: 22, Errors: 10, Skipped: 0, Time elapsed: 0.039 sec <<< FAILURE!
+testIsListBoxInsideListBox(net.thumbtack.school.windows.v2.TestListBox)  Time elapsed: 0.009 sec  <<< FAILURE!
 java.lang.AssertionError
 	at org.junit.Assert.fail(Assert.java:86)
 	at org.junit.Assert.assertTrue(Assert.java:41)
@@ -38,7 +38,7 @@ java.lang.AssertionError
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 
-testListBoxSetLine(net.thumbtack.school.windows.v2.TestListBox)  Time elapsed: 0 sec  <<< FAILURE!
+testListBoxSetLine(net.thumbtack.school.windows.v2.TestListBox)  Time elapsed: 0.005 sec  <<< FAILURE!
 java.lang.AssertionError: 
 Expected: not ["line1", "newline", "line3"]
      but: was ["line1", "newline", "line3"]
@@ -113,7 +113,7 @@ java.lang.AssertionError: expected:<201> but was:<30>
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 
-testMoveRelListBox(net.thumbtack.school.windows.v2.TestListBox)  Time elapsed: 0 sec  <<< FAILURE!
+testMoveRelListBox(net.thumbtack.school.windows.v2.TestListBox)  Time elapsed: 0.001 sec  <<< FAILURE!
 java.lang.AssertionError: expected:<110> but was:<10>
 	at org.junit.Assert.fail(Assert.java:88)
 	at org.junit.Assert.failNotEquals(Assert.java:834)
@@ -150,7 +150,7 @@ java.lang.AssertionError: expected:<110> but was:<10>
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 
-testListBoxSortedDescendant2(net.thumbtack.school.windows.v2.TestListBox)  Time elapsed: 0 sec  <<< FAILURE!
+testListBoxSortedDescendant2(net.thumbtack.school.windows.v2.TestListBox)  Time elapsed: 0.003 sec  <<< FAILURE!
 java.lang.AssertionError
 	at org.junit.Assert.fail(Assert.java:86)
 	at org.junit.Assert.assertTrue(Assert.java:41)
@@ -256,7 +256,7 @@ java.lang.NullPointerException
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 
-testResizeListBox(net.thumbtack.school.windows.v2.TestListBox)  Time elapsed: 0 sec  <<< FAILURE!
+testResizeListBox(net.thumbtack.school.windows.v2.TestListBox)  Time elapsed: 0.003 sec  <<< FAILURE!
 java.lang.AssertionError: expected:<69> but was:<39>
 	at org.junit.Assert.fail(Assert.java:88)
 	at org.junit.Assert.failNotEquals(Assert.java:834)
@@ -331,7 +331,7 @@ java.lang.AssertionError: expected not same
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 
 testListBoxesAreEqual(net.thumbtack.school.windows.v2.TestListBox)  Time elapsed: 0 sec  <<< FAILURE!
-java.lang.AssertionError: expected:<net.thumbtack.school.windows.v2.ListBox@3caeaf62> but was:<net.thumbtack.school.windows.v2.ListBox@e6ea0c6>
+java.lang.AssertionError: expected:<net.thumbtack.school.windows.v2.ListBox@2e5c649> but was:<net.thumbtack.school.windows.v2.ListBox@136432db>
 	at org.junit.Assert.fail(Assert.java:88)
 	at org.junit.Assert.failNotEquals(Assert.java:834)
 	at org.junit.Assert.assertEquals(Assert.java:118)
@@ -401,7 +401,7 @@ java.lang.ArrayIndexOutOfBoundsException: 3
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 
-testListBoxReverseLineOrder2(net.thumbtack.school.windows.v2.TestListBox)  Time elapsed: 0 sec  <<< ERROR!
+testListBoxReverseLineOrder2(net.thumbtack.school.windows.v2.TestListBox)  Time elapsed: 0.001 sec  <<< ERROR!
 java.lang.ArrayIndexOutOfBoundsException: 4
 	at net.thumbtack.school.windows.v2.ListBox.reverseLineOrder(ListBox.java:144)
 	at net.thumbtack.school.windows.v2.TestListBox.testListBoxReverseLineOrder2(TestListBox.java:360)
@@ -503,7 +503,7 @@ java.lang.NullPointerException
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 
-testListBoxRemoveLines1(net.thumbtack.school.windows.v2.TestListBox)  Time elapsed: 0 sec  <<< FAILURE!
+testListBoxRemoveLines1(net.thumbtack.school.windows.v2.TestListBox)  Time elapsed: 0.001 sec  <<< FAILURE!
 java.lang.AssertionError: array lengths differed, expected.length=2 actual.length=3
 	at org.junit.Assert.fail(Assert.java:88)
 	at org.junit.internal.ComparisonCriteria.assertArraysAreSameLength(ComparisonCriteria.java:76)
@@ -542,7 +542,7 @@ java.lang.AssertionError: array lengths differed, expected.length=2 actual.lengt
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 
-testListBoxRemoveLines2(net.thumbtack.school.windows.v2.TestListBox)  Time elapsed: 0 sec  <<< FAILURE!
+testListBoxRemoveLines2(net.thumbtack.school.windows.v2.TestListBox)  Time elapsed: 0.001 sec  <<< FAILURE!
 java.lang.AssertionError: array lengths differed, expected.length=2 actual.length=4
 	at org.junit.Assert.fail(Assert.java:88)
 	at org.junit.internal.ComparisonCriteria.assertArraysAreSameLength(ComparisonCriteria.java:76)
@@ -615,7 +615,7 @@ java.lang.NullPointerException
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 
-testIsPointInsideListBox1(net.thumbtack.school.windows.v2.TestListBox)  Time elapsed: 0 sec  <<< FAILURE!
+testIsPointInsideListBox1(net.thumbtack.school.windows.v2.TestListBox)  Time elapsed: 0.001 sec  <<< FAILURE!
 java.lang.AssertionError
 	at org.junit.Assert.fail(Assert.java:86)
 	at org.junit.Assert.assertTrue(Assert.java:41)
@@ -687,7 +687,7 @@ java.lang.AssertionError
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 
-testIsIntersectsListBox(net.thumbtack.school.windows.v2.TestListBox)  Time elapsed: 0 sec  <<< FAILURE!
+testIsIntersectsListBox(net.thumbtack.school.windows.v2.TestListBox)  Time elapsed: 0.001 sec  <<< FAILURE!
 java.lang.AssertionError
 	at org.junit.Assert.fail(Assert.java:86)
 	at org.junit.Assert.assertTrue(Assert.java:41)
@@ -759,7 +759,7 @@ java.lang.AssertionError
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 
-testSliceListBox1(net.thumbtack.school.windows.v2.TestListBox)  Time elapsed: 0 sec  <<< ERROR!
+testSliceListBox1(net.thumbtack.school.windows.v2.TestListBox)  Time elapsed: 0.001 sec  <<< ERROR!
 java.lang.ArrayIndexOutOfBoundsException: 1
 	at net.thumbtack.school.windows.v2.ListBox.getLinesSlice(ListBox.java:114)
 	at net.thumbtack.school.windows.v2.TestListBox.testSliceListBox1(TestListBox.java:115)
@@ -827,7 +827,7 @@ java.lang.NullPointerException
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 
-testMoveToListBox1(net.thumbtack.school.windows.v2.TestListBox)  Time elapsed: 0 sec  <<< FAILURE!
+testMoveToListBox1(net.thumbtack.school.windows.v2.TestListBox)  Time elapsed: 0.001 sec  <<< FAILURE!
 java.lang.AssertionError: expected:<100> but was:<10>
 	at org.junit.Assert.fail(Assert.java:88)
 	at org.junit.Assert.failNotEquals(Assert.java:834)
@@ -901,7 +901,7 @@ java.lang.AssertionError: expected:<100> but was:<10>
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 
-testListBoxGetLine2(net.thumbtack.school.windows.v2.TestListBox)  Time elapsed: 0 sec  <<< ERROR!
+testListBoxGetLine2(net.thumbtack.school.windows.v2.TestListBox)  Time elapsed: 0.001 sec  <<< ERROR!
 java.lang.ArrayIndexOutOfBoundsException: 3
 	at net.thumbtack.school.windows.v2.ListBox.getLine(ListBox.java:121)
 	at net.thumbtack.school.windows.v2.TestListBox.testListBoxGetLine2(TestListBox.java:325)
@@ -974,7 +974,7 @@ java.lang.AssertionError: array lengths differed, expected.length=6 actual.lengt
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 
-testListBoxDuplicateLines2(net.thumbtack.school.windows.v2.TestListBox)  Time elapsed: 0 sec  <<< ERROR!
+testListBoxDuplicateLines2(net.thumbtack.school.windows.v2.TestListBox)  Time elapsed: 0.001 sec  <<< ERROR!
 java.lang.NullPointerException
 	at net.thumbtack.school.windows.v2.ListBox.duplicateLines(ListBox.java:169)
 	at net.thumbtack.school.windows.v2.TestListBox.testListBoxDuplicateLines2(TestListBox.java:399)
@@ -1008,7 +1008,7 @@ java.lang.NullPointerException
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 
-testListBox1(net.thumbtack.school.windows.v2.TestListBox)  Time elapsed: 0 sec  <<< FAILURE!
+testListBox1(net.thumbtack.school.windows.v2.TestListBox)  Time elapsed: 0.001 sec  <<< FAILURE!
 java.lang.AssertionError: expected:<21> but was:<1>
 	at org.junit.Assert.fail(Assert.java:88)
 	at org.junit.Assert.failNotEquals(Assert.java:834)

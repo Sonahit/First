@@ -43,7 +43,7 @@ public class StringOperations {
 	}
 	public static boolean isSameLastCharPosition(String string1, String string2, char character) {
 		
-    return string1.charAt(string1.length()-1) == string2.charAt(string2.length()-1);
+    return string1.substring(string1.length()-1, string1.length()).equals(string2.substring(string2.length()-1, string2.length()));
 
 	
 	}
@@ -60,28 +60,24 @@ public class StringOperations {
     return false; 
 
 	}
-	public static boolean isSameLastStringPosition(String string1, String string2, String str) {
-		
-        for(int i = string1.length() ; i <-1 ; i-- ) {
-        	if (i - str.length() < 0) break;
-        	if(str.equals(string1)) {
-        		
-        		if(string1.charAt(i) == string2.charAt(i)) {
-        			return true;
-        		}
-        		else return false;
-        	}
-        	if( str.equals(string2)) {
-        		if(string1.charAt(i) == string2.charAt(i)) {
-        			return true;
-        		}
-        		else return false;
-        	}
+	 public static boolean isSameLastStringPosition(String string1, String string2, String str) {
+			String check = "";
+			String less = "";
+			if(string1.length() >= string2.length()) {
+				check = string1;
+				less = string2;
+			}
+			else {
+				check = string2;
+				less = string1;
+			}
+     for(int i = 0; i < check.length() - str.length() + 1  ; i++) {
+     	if(check.substring(i, i + str.length()).equals(str))
+            return check.substring(i, i + str.length()).equals(less.substring(i, i + str.length()));
      }
-     
-    return false; 
+	    return false;
 
-	}
+		}
 	public static boolean isEqual(String string1, String string2) {
 
 		return string1.equals(string2);
@@ -91,12 +87,13 @@ public class StringOperations {
 	   return string1.equalsIgnoreCase(string2);
 	} 
 	public static boolean isLess(String string1, String string2) {
-		
-		return string1.length() < string2.length();
+		if (string1.compareTo(string2) < 0) return true;
+		return false;
 	} 
 	 public static boolean isLessIgnoreCase(String string1, String string2) {
 		 
-		 return string1.length() < string2.length();
+		 if (string1.compareToIgnoreCase(string2) < 0) return true;
+			return false;
 	 }
 	 public static String concat(String string1, String string2) {
 	
@@ -168,11 +165,12 @@ public class StringOperations {
 	 }
 	 
 	 public static boolean hasSameSubstring(String string1, String string2, int index, int length) {
-	 int length1 = length;
-	 int length2 = length;
-	 if (length >= string1.length()) length1 = string1.length();
-	 if (length >= string2.length()) length2 = string2.length();
-	 return string1.substring(index, length1).equals(string2.substring(index, length2));
+	     int length1 = length;
+		 int length2 = length;
+	     if (length >= string1.length()) length1 = string1.length() - 1;
+	     if (length >= string2.length()) length2 = string2.length() - 1;
+	     return string1.substring(index, length1).equals(string2.substring(index, length2)) 
+			    || string1.substring(index, length2).equals(string2.substring(index, length1));
 	 
 	 }
 	 public static boolean isEqualAfterReplaceCharacters(String string1, char replaceInStr1, char replaceByInStr1, String string2, char replaceInStr2, char replaceByInStr2) {
@@ -255,24 +253,24 @@ public class StringOperations {
 	 
 	 public static StringBuilder removeCharacters(String string, int[] positions) {
 		
-		    String left, right;
-		     for(int i : positions) {
-		        left = string.substring(0, i-1);
-		        right = string.substring(i+1, string.length() - 1);
-		        string = left + right;
-        	    }
-          StringBuilder strb = new StringBuilder(string);
- 		  return strb;
-          }
-		 
-	 public static StringBuilder insertCharacters(String string, int[] positions, char[] characters) {
-	 
 		 StringBuilder strb = new StringBuilder(string);
-		 for(int i: positions) {
-			 int j = 0;
-		     strb.insert(i, characters[j]);
-		     j++;
-		 }
+		 
+         for(int i: positions) {
+        	 strb.delete(positions[i], positions[i]);
+         }
+
 		   return strb;
 	 }
+		 
+	 public static StringBuilder insertCharacters(String string, int[] positions, char[] characters) {
+	  
+		 StringBuilder strb = new StringBuilder(string);
+		 
+         for(int i = positions.length - 1; i > -1 ; i--) {
+        	 strb.insert(positions[i], characters[i]);
+         }
+
+		   return strb;
+	 }
+	 
 }
