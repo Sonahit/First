@@ -39,12 +39,29 @@ class A {
 	 return maxs;
 	 }
 	 public static boolean hasSameSubstring(String string1, String string2, int index, int length) {
-		 int length1 = length;
-		 int length2 = length;
-	 if (length >= string1.length()) length1 = string1.length();
-	 if (length >= string2.length()) length2 = string2.length();
-	 return string1.substring(index, length1).equals(string2.substring(index, length2)) 
-			 || string1.substring(index, length2).equals(string2.substring(index, length1));
+		 String check = "";
+			String less = "";
+			if(string1.length() >= string2.length()) {
+				check = string1;
+				less = string2;
+				if(length+index  > string2.length() ) {
+					return false;
+							
+				}
+			}
+			else {
+				check = string2;
+				less = string1;
+				if(length+index > string1.length() ) {
+					return false;
+							
+				}
+
+			}
+            	 if(check.substring(index, length).equals(less.substring(index, length))) {
+            		 return true;
+            	 }
+          return false;
 	 
 	 }
 	public boolean SamePrefix (String text, String text1, String prefix) {
@@ -95,6 +112,7 @@ class A {
 			if(string1.length() >= string2.length()) {
 				check = string1;
 				less = string2;
+
 			}
 			else {
 				check = string2;
@@ -143,9 +161,10 @@ public class Shtripling {
        A test = new A();
        System.out.println(test.getLongestPalindromeIgnoreCase(text));*/
 		A test = new A();
-		String first = "winding";
-		String second = "winding";
-		System.out.println(test.removeCharacters("0123456789", new int[]{0, 2, 4, 6, 8}).toString());
+        String first = "Hello";
+        String second = "Hell";
+        String third = "Helloween";
+		System.out.println(test.hasSameSubstring(first, third, 2, 3));
   /*     A text = new A();
        String text1 = "Hello";
        String text2 = "Hell";

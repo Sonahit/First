@@ -165,12 +165,26 @@ public class StringOperations {
 	 }
 	 
 	 public static boolean hasSameSubstring(String string1, String string2, int index, int length) {
-	     int length1 = length;
-		 int length2 = length;
-	     if (length >= string1.length()) length1 = string1.length() - 1;
-	     if (length >= string2.length()) length2 = string2.length() - 1;
-	     return string1.substring(index, length1).equals(string2.substring(index, length2)) 
-			    || string1.substring(index, length2).equals(string2.substring(index, length1));
+		 String check = "";
+			String less = "";
+			if(string1.length() > string2.length()) {
+				check = string1;
+				less = string2;
+				if(length+index  > string2.length() ) {
+					return false;							
+				}
+			}
+			else {
+				check = string2;
+				less = string1;
+				if(length+index > string1.length() ) {
+					return false;		
+				}
+			}
+            	 if(check.substring(index, length).equals(less.substring(index, length))) {
+            		 return true;
+            	 }
+          return false;
 	 
 	 }
 	 public static boolean isEqualAfterReplaceCharacters(String string1, char replaceInStr1, char replaceByInStr1, String string2, char replaceInStr2, char replaceByInStr2) {
