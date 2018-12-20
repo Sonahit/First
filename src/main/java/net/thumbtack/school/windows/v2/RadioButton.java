@@ -1,26 +1,30 @@
 package main.java.net.thumbtack.school.windows.v2;
 
 public class RadioButton extends RoundButton {
-
+    boolean checked = true;
 	
-	public RadioButton(Point center, int radius, boolean active, String text){
+	public RadioButton(Point center, int radius, boolean active, String text, boolean checked){
 		super(center,radius,active,text);
+		this.checked = checked;
 	}
 
-	public RadioButton(int xCenter, int yCenter, int radius, boolean active, String text){
+	public RadioButton(int xCenter, int yCenter, int radius, boolean active, String text, boolean checked){
 		super(xCenter,yCenter,radius,active,text);
 		super.setCenter(xCenter, yCenter);
+		this.checked = checked;
 	}
 
 	 
-	public RadioButton(Point center, int radius, String text){
+	public RadioButton(Point center, int radius, String text, boolean checked){
 		super(center,radius,text);
+		this.checked = checked;
 	}
 
 
-	public RadioButton(int xCenter, int yCenter, int radius, String text){
+	public RadioButton(int xCenter, int yCenter, int radius, String text, boolean checked){
 		super(xCenter,yCenter,radius,text);
 		super.setCenter(xCenter, yCenter);
+		this.checked = checked;
 	}
 	
 public Point getCenter(){
@@ -36,7 +40,12 @@ public boolean isActive(){
 	return super.isActive();
 }
 
-
+public boolean isChecked() {
+	return checked;
+}
+public void setChecked(boolean checked) {
+	this.checked = checked;
+}
 public void moveTo(int x, int y){
 	super.moveTo(x, y);
 }

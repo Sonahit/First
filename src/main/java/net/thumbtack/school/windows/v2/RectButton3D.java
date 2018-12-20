@@ -1,41 +1,43 @@
 package main.java.net.thumbtack.school.windows.v2;
 
 public class RectButton3D extends RectButton {
-	private int width;
-    private int height;
     private int zHeight;
    
 	public RectButton3D(Point topLeft, Point bottomRight, boolean active, String text, int zHeight){
   	     super(topLeft, bottomRight,active,text);
 		 if (topLeft.equals(bottomRight)) {
-	    	  height = 1;
-	    	  width = 1;
-	    	  zHeight = 1;
+		        super.getHeight();
+		        super.getWidth();
+		        this.zHeight = 1;
 	       }
 	       else {
 	     	  this.zHeight = zHeight;
-	    	  width = bottomRight.getX() - super.getTopLeft().getX()   + 1;
-	    	  height =  bottomRight.getY() - super.getTopLeft().getY()   + 1;
+	          super.getHeight();
+	          super.getWidth();	     
 		}
 	}
 
 		public RectButton3D(int xLeft, int yTop, int width, int height, boolean active, String text, int zHeight){
-		  super(xLeft, yTop,width,height,active);
-		  this.width = width;
-		  this.height =  height;
+		  super(xLeft, yTop,width,height,active,text);
+	        super.getHeight();
+	        super.getWidth();
+	        this.zHeight = zHeight;
+          
 		}
 		
 		public RectButton3D(int xLeft, int yTop, int width, int height, String text, int zHeight) {
 			super(xLeft,yTop,width,height,text);
-			  this.width = width;
-	    	  this.height =  height;
+	        super.getHeight();
+	        super.getWidth();
+	        this.zHeight = zHeight;
 		}
 
 		 
 		public RectButton3D(Point topLeft, Point bottomRight, String text, int zHeight) {
 		  super(topLeft, bottomRight,text);
-		  width = bottomRight.getX() - super.getTopLeft().getX() + 1;
-		  height = bottomRight.getY() - super.getTopLeft().getY() + 1;
+	      super.getHeight();
+	      super.getWidth();
+	      this.zHeight = zHeight;
 		}
 		
 	public Point getTopLeft(){
@@ -62,10 +64,10 @@ public class RectButton3D extends RectButton {
 
 
 	public void setBottomRight(Point bottomRight){
-   
+
    	  super.setBottomRight(bottomRight);
-      width = bottomRight.getX()+1;
-      height = bottomRight.getY()+1;
+      super.getWidth();
+      super.getHeight();
   
 	}
 
@@ -77,16 +79,24 @@ public class RectButton3D extends RectButton {
 
 
 	public int getWidth(){
-        return width;
+        return super.getWidth();
 
 	}
 
 
 	public int getHeight(){
-		return height;
+		return super.getHeight();
+
+	}
+	
+	public int getZHeight(){
+		return zHeight;
 
 	}
 
+	public void setZHeight(int zHeight){
+		this.zHeight = zHeight;
+	}
 
 	public void moveTo(int x, int y){
 		super.moveTo(x, y);
@@ -104,26 +114,14 @@ public class RectButton3D extends RectButton {
 	
 
 	public void resize(double ratio){
-      width = (int)(width*ratio);
-      height = (int)(height*ratio);
-      if(width<= 1 || height<= 1) {
-    	 if (width<= 1 ) {
-    		 width = 1;
-    	 }
-    	 if(height<= 1) {
-    		 height = 1;
-    	 }
-      }
-      super.getBottomRight().setX(super.getTopLeft().getX()+width - 1);
-      super.getBottomRight().setY(super.getTopLeft().getY()+height - 1);
-     
+      super.resize(ratio);
 	}
 
 
 	public boolean isInside(int x, int y) {
        return (
     		   
-    		   (super.getTopLeft().getX() + width > x & super.getTopLeft().getY() + height > y) & (x > 0 & y > 0)
+    		   (super.getTopLeft().getX() + super.getWidth() > x & super.getTopLeft().getY() + super.getHeight() > y) & (x > 0 & y > 0)
     		   
     		   );
 
@@ -134,7 +132,7 @@ public class RectButton3D extends RectButton {
 	public boolean isInside(Point point){
 	       return (
 	    		   
-	    		   (super.getTopLeft().getX() + width > point.getX() & super.getTopLeft().getY() + height > point.getY()) & (point.getX() > 0 & point.getY() > 0)
+	    		   (super.getTopLeft().getX() + super.getWidth() > point.getX() & super.getTopLeft().getY() + super.getHeight() > point.getY()) & (point.getX() > 0 & point.getY() > 0)
 	    		   
 	    		   ); 
 
@@ -145,11 +143,11 @@ public class RectButton3D extends RectButton {
 
 		return  rectButton.getWidth() > 0 
 				&& rectButton.getHeight() > 0 
-				&& width > 0 
-				&& height > 0
-				&& rectButton.getTopLeft().getX() < super.getTopLeft().getX() + width 
+				&& super.getWidth() > 0 
+				&& super.getHeight() > 0
+				&& rectButton.getTopLeft().getX() < super.getTopLeft().getX() + super.getWidth() 
 				&& rectButton.getTopLeft().getX() + rectButton.getWidth() > super.getTopLeft().getX()
-				&& rectButton.getTopLeft().getY() < super.getTopLeft().getY() + height 
+				&& rectButton.getTopLeft().getY() < super.getTopLeft().getY() + super.getHeight() 
 				&& rectButton.getTopLeft().getY() + rectButton.getHeight() > super.getTopLeft().getY();
 	}
 	
@@ -157,8 +155,8 @@ public class RectButton3D extends RectButton {
 	public boolean isInside(RectButton rectButton){
        return 
     		   
-    		   super.getTopLeft().getX() + width > rectButton.getTopLeft().getX() 
-    		   && super.getTopLeft().getY() + height > rectButton.getTopLeft().getY() 
+    		   super.getTopLeft().getX() + super.getWidth() > rectButton.getTopLeft().getX() 
+    		   && super.getTopLeft().getY() + super.getHeight() > rectButton.getTopLeft().getY() 
                && rectButton.getTopLeft().getX() > 0 
                && rectButton.getTopLeft().getY() > 0; 
 
@@ -168,8 +166,8 @@ public class RectButton3D extends RectButton {
 	public boolean isInside(RectButton3D rectButton3D){
 	       return 
 	    		   
-	    		   super.getTopLeft().getX() + width > rectButton3D.getTopLeft().getX() 
-	    		   && super.getTopLeft().getY() + height > rectButton3D.getTopLeft().getY() 
+	    		   super.getTopLeft().getX() + super.getWidth() > rectButton3D.getTopLeft().getX() 
+	    		   && super.getTopLeft().getY() + super.getHeight() > rectButton3D.getTopLeft().getY() 
 	               && rectButton3D.getTopLeft().getX() > 0 
 	               && rectButton3D.getTopLeft().getY() > 0; 
 
@@ -186,55 +184,15 @@ public class RectButton3D extends RectButton {
     	super.setText(text);
 	}
 
-
 	public boolean isFullyVisibleOnDesktop(Desktop desktop) {
 
-		final int xL0 = super.getTopLeft().getX();
-		final int yL0 = super.getTopLeft().getY();
-		
-		
 		return
 				super.getTopLeft().getX() >= 0
 				&& super.getTopLeft().getY() >= 0
-				&& width + super.getTopLeft().getX()  <= desktop.getWidth()  
-				&& (height + super.getTopLeft().getY()) <= desktop.getHeight(); 
+				&& super.getWidth() + super.getTopLeft().getX()  <= desktop.getWidth()  
+				&& (super.getHeight() + super.getTopLeft().getY()) <= desktop.getHeight(); 
     		  
     		  
 	}
-
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = super.hashCode();
-		result = prime * result + height;
-		result = prime * result + width;
-		result = prime * result + zHeight;
-		return result;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj) {
-			return true;
-		}
-		if (!super.equals(obj)) {
-			return false;
-		}
-		if (getClass() != obj.getClass()) {
-			return false;
-		}
-		RectButton3D other = (RectButton3D) obj;
-		if (height != other.height) {
-			return false;
-		}
-		if (width != other.width) {
-			return false;
-		}
-		if (zHeight != other.zHeight) {
-			return false;
-		}
-		return true;
-	}
-
 
 }
