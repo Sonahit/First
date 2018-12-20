@@ -1,4 +1,4 @@
-package net.thumbtack.school.windows.v2;
+package main.java.net.thumbtack.school.windows.v2;
 
 
 public class Desktop {

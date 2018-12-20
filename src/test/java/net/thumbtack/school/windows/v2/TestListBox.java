@@ -1,4 +1,4 @@
-package net.thumbtack.school.windows.v2;
+package test.java.net.thumbtack.school.windows.v2;
 
 import org.hamcrest.core.IsEqual;
 import org.hamcrest.core.IsNot;
