@@ -160,6 +160,7 @@ public int hashCode() {
 	result = prime * result + (active ? 1231 : 1237);
 	result = prime * result + ((center == null) ? 0 : center.hashCode());
 	result = prime * result + radius;
+	result = prime * result + ((text == null) ? 0 : text.hashCode());
 	result = prime * result + xCenter;
 	result = prime * result + yCenter;
 	return result;
@@ -173,7 +174,7 @@ public boolean equals(Object obj) {
 	if (obj == null) {
 		return false;
 	}
-	if (!(obj instanceof RoundButton)) {
+	if (getClass() != obj.getClass()) {
 		return false;
 	}
 	RoundButton other = (RoundButton) obj;
@@ -188,6 +189,13 @@ public boolean equals(Object obj) {
 		return false;
 	}
 	if (radius != other.radius) {
+		return false;
+	}
+	if (text == null) {
+		if (other.text != null) {
+			return false;
+		}
+	} else if (!text.equals(other.text)) {
 		return false;
 	}
 	if (xCenter != other.xCenter) {

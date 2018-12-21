@@ -3,7 +3,7 @@ import java.lang.StringBuilder;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.text.DecimalFormat;
-
+import java.lang.String;
 
 
 
@@ -17,6 +17,71 @@ class A {
 		
 	   return temp;
 	}
+	 
+	
+	public String [] reverseLineOrder(String lines []) {
+	     if(lines != null) {
+	    	 int start = 0;
+	    	 int end = lines.length - 1;
+             while(start < end) {
+            	 String temp = lines[start];
+            	 lines[start] = lines[end];
+            	 lines[end] = temp;  	 
+            	 start++;
+            	 end--;
+	     }
+             }
+	     return lines;
+		}
+	
+	public String [] setLine(int index, String line, String [] lines) {
+		if(lines != null) {
+			lines[index] = line;
+		}
+		for(String i: lines) {
+		System.out.println(i);
+		}
+		return lines;
+	}
+	public String[] duplicateLines(String [] lines) {
+	if(lines != null) {
+	    String [] temp = lines;
+	    temp = new String [temp.length * 2];
+	    int j = 1;
+	    int k = 0;
+	    for(int i = 0; i < lines.length; i++) {
+		    System.out.println(lines[i]);
+		    temp[k] = lines[i];
+	    	temp[j] = lines[i];
+		    System.out.println(temp[j]);
+	    	j = j + 2;
+	    	k = k +2;
+	    	if(j > temp.length) break;
+	    }
+	    for(int i = 0; i < temp.length; i++) {
+	    	System.out.print(i+" = " + temp[i]+ "\t");
+	    }
+	    System.out.println();
+	    for(int i = 0; i < lines.length; i++) {
+	    	System.out.print(i+" = " + lines[i]+ "\t");
+	    }
+	    System.out.println();
+	    lines = temp.clone();
+	    for(int i = 0; i < lines.length; i++) {
+	    	System.out.print(i+" = " + lines[i]+ "\t");
+	    }
+	    
+	}
+    return lines;
+	}
+	
+	
+	public String getLine(int index, String []lines) {
+		    if (index > lines.length - 1) return null;
+		    return lines[index];
+		
+	}
+	
 	 public static boolean isPalindromeIgnoreCase(String string) {
 			
 			String temp = "";
@@ -38,6 +103,28 @@ class A {
 	     }
 	 return maxs;
 	 }
+	 
+	 public static String getCommonPrefix(String string1, String string2) {
+		 String check = "";
+			String less = "";
+			if(string1.length() >= string2.length()) {
+				check = string1;
+				less = string2;						
+				}
+			else {
+				check = string2;
+				less = string1;		
+				}
+			String temp = "";
+               for(int i = 0; i < less.length(); i++ ) {
+            	   if(check.charAt(i) == less.charAt(i))
+            		   temp = temp + check.charAt(i); 
+               }
+        if(temp.equals(less.substring(0, temp.length())) ) return temp;
+        return temp;
+         
+	 }
+	 
 	 public static boolean hasSameSubstring(String string1, String string2, int index, int length) {
 		 String check = "";
 			String less = "";
@@ -73,9 +160,9 @@ class A {
 			
 		 StringBuilder strb = new StringBuilder(string);
 		 
-         for(int i = positions.length - 1; i > -1 ; i--) {
+         for(int i = positions.length-1; i > -1 ; i--) {
         	if (strb.equals("")) break;
-        	 strb.delete(i , i);
+        	 strb.deleteCharAt(positions[i]);
 
          }
 
@@ -106,6 +193,38 @@ class A {
 		   return strb;
 	 }
 	 
+	 public static boolean isEqualAfterTrimming(String string1, String string2) {
+			System.out.println("String1 = " + string1);
+		    string1 = string1.trim();
+		    System.out.println("String1 = " + string1);
+		    System.out.println("String2 = " + string2);
+		    string2 = string2.trim();
+		    System.out.println("String2 = " + string2);
+		    return string1.equals(string2);
+		 }
+	 
+	 
+		public static boolean isSameLastCharPosition(String string1, String string2, char character) {
+			String check = "";
+			String less = "";
+			if(string1.length() >= string2.length()) {
+				check = string1;
+				less = string2;
+
+			}
+			else {
+				check = string2;
+				less = string1;
+			}
+	    for(int i = 0; i < check.length() ; i++) {
+	    	if(check.charAt(i) == character) {
+	    		return check.charAt(i) == less.charAt(i);
+	    	}
+	    }
+	    return false;
+
+		}
+		
 	 public static boolean isSameLastStringPosition(String string1, String string2, String str) {
 			String check = "";
 			String less = "";
@@ -161,10 +280,8 @@ public class Shtripling {
        A test = new A();
        System.out.println(test.getLongestPalindromeIgnoreCase(text));*/
 		A test = new A();
-        String first = "Hello";
-        String second = "Hell";
-        String third = "Helloween";
-		System.out.println(test.hasSameSubstring(first, third, 2, 3));
+		String [] lines = {"line1", "line2", "line3"};
+		System.out.println(test.getLine(3, lines));
   /*     A text = new A();
        String text1 = "Hello";
        String text2 = "Hell";

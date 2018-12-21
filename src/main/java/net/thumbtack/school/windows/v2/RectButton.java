@@ -245,14 +245,12 @@ class RectButton {
 
 	}
 	public String getText() {
-		//Возвращает текст окна 
 		return text;
 		
 	}
 	
 
     public void setText(String text) {
-	    //Устанавливает текст окна 
     	this.text = text;
 	}
 
