@@ -20,7 +20,6 @@ public class RoundButton {
 		this.center = center;
 		this.radius = radius;
 		this.active = active;
-		this.text = text;
 	}
 
 	public RoundButton(int xCenter, int yCenter, int radius, boolean active, String text){

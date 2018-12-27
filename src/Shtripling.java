@@ -1,9 +1,14 @@
-import java.util.Random;
+
 import java.lang.StringBuilder;
 import java.math.BigDecimal;
+<<<<<<< HEAD
+
+import java.lang.String;
+=======
 import java.math.BigInteger;
 import java.text.DecimalFormat;
 
+>>>>>>> branch 'master' of https://github.com/Sonahit/First
 
 
 
