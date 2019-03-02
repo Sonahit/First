@@ -1,0 +1,118 @@
+.table-first {
+    color:white;
+    background-color: black;   
+    width: 100px;
+    margin: 0;
+    padding-left: 0%;
+}
+
+.table-second {
+    color:white;
+    background-color: orange;   
+    width: 100px;
+    margin: 0;
+    padding-left: 25%;  
+}
+
+.table-third {
+    color:white;
+    background-color: black;
+    width: 100px;
+    margin: 0;
+    padding-left: 50%;   
+}
+
+.mainpage {
+    background-color: white;
+    border-style: solid;
+} 
+
+.button-center {
+    text-align: center;
+    margin: 0 auto;
+    justify-content: center;
+    display: block;
+}
+
+#rainbow{
+  color: green;
+  -webkit-animation: rainbow 5s infinite; 
+  /* Internet Explorer */
+  -ms-animation: rainbow 5s infinite; 
+  /* Standar Syntax */
+  animation: rainbow 5s infinite; 
+  font-style: italic;
+}
+
+.center-text{
+    border-style: solid;
+    border-color: green;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.center-text a {
+    text-decoration: none;
+    position: relative;
+    padding-left: 40%;
+}
+
+a:hover {
+    color: red;
+}
+
+a:link {
+    color: blue;
+}
+
+a:visited {
+    color: red;
+}
+a:active {
+    color: black;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes rainbow{
+    0%{color: orange;}	
+    10%{color: purple;}	
+    20%{color: red;}
+    30%{color: CadetBlue;}
+    40%{color: yellow;}
+    50%{color: coral;}
+    60%{color: green;}
+    70%{color: cyan;}
+    80%{color: DeepPink;}
+    90%{color: DodgerBlue;}
+    100%{color: orange;}
+  }
+  
+  /* Internet Explorer */
+  @-ms-keyframes rainbow{
+    0%{color: orange;}	
+    10%{color: purple;}	
+    20%{color: red;}
+    30%{color: CadetBlue;}
+    40%{color: yellow;}
+    50%{color: coral;}
+    60%{color: green;}
+    70%{color: cyan;}
+    80%{color: DeepPink;}
+    90%{color: DodgerBlue;}
+    100%{color: orange;}
+  }
+  
+  /* Standar Syntax */
+  @keyframes rainbow{
+    0%{color: orange;}	
+    10%{color: purple;}	
+    20%{color: red;}
+    30%{color: CadetBlue;}
+    40%{color: yellow;}
+    50%{color: coral;}
+    60%{color: green;}
+    70%{color: cyan;}
+    80%{color: DeepPink;}
+    90%{color: DodgerBlue;}
+    100%{color: orange;}
+  }
