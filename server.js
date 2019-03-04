@@ -37,6 +37,12 @@ http.createServer( function (request, response){
     else if (pathname == "/Vacation/images/dance.gif") {
         response.write(fs.readFileSync("Vacation/images/dance.gif"));
     }
+    else if (pathname == "/Practice/") {
+        response.write(fs.readFileSync("Practice/index.html"));
+    }
+    else if (pathname == "/Practice/CSS/style.css") {
+        response.write(fs.readFileSync("Practice/CSS/style.css"));
+    }
 
 
     response.end();
