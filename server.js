@@ -7,7 +7,6 @@ http.createServer( function (request, response){
     console.log("Request for " + pathname + " received.");
     
     response.writeHead(200);
-
     if(pathname == "/") {
         html = fs.readFileSync("HTML/index.html", "utf8");
         response.write(html);
@@ -42,6 +41,30 @@ http.createServer( function (request, response){
     }
     else if (pathname == "/Practice/CSS/style.css") {
         response.write(fs.readFileSync("Practice/CSS/style.css"));
+    }
+    else if (pathname == "/Practice/CSS/mainpage.css") {
+        response.write(fs.readFileSync("Practice/CSS/mainpage.css"));
+    }
+    else if (pathname == "/Practice/JS/bouncing.js") {
+        response.write(fs.readFileSync("Practice/JS/bouncing.js"));
+    }
+    else if (pathname == "/Practice/Image/logo.png") {
+        response.write(fs.readFileSync("Practice/Image/logo.png"));
+    }
+    else if (pathname == "/Practice/News/") {
+        response.write(fs.readFileSync("Practice/News/index.html"));
+    }
+    else if (pathname == "/Practice/GS/") {
+        response.write(fs.readFileSync("Practice/GS/index.html"));
+    }
+    else if (pathname == "/Practice/Contact/") {
+        response.write(fs.readFileSync("Practice/Contact/index.html"));
+    }
+    else if (pathname == "/Practice/About/") {
+        response.write(fs.readFileSync("Practice/About/index.html"));
+    }
+    else if (pathname == "/Practice/Field/") {
+        response.write(fs.readFileSync("Practice/Field/index.html"));
     }
 
 
