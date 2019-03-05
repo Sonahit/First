@@ -45,9 +45,6 @@ http.createServer( function (request, response){
     else if (pathname == "/Practice/CSS/mainpage.css") {
         response.write(fs.readFileSync("Practice/CSS/mainpage.css"));
     }
-    else if (pathname == "/Practice/JS/bouncing.js") {
-        response.write(fs.readFileSync("Practice/JS/bouncing.js"));
-    }
     else if (pathname == "/Practice/Image/logo.png") {
         response.write(fs.readFileSync("Practice/Image/logo.png"));
     }
@@ -65,6 +62,9 @@ http.createServer( function (request, response){
     }
     else if (pathname == "/Practice/Field/") {
         response.write(fs.readFileSync("Practice/Field/index.html"));
+    }
+    else if (pathname == "/Practice/Field/JS/bouncing.js") {
+        response.write(fs.readFileSync("Practice/Field/JS/bouncing.js"));
     }
 
 
