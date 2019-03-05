@@ -2,21 +2,29 @@
 <html>
 <head>
   <link rel="stylesheet" type="text/css" href="CSS/style.css"></link> 
+  <link rel="stylesheet" type="text/css" href="CSS/mainpage.css"></link> 
+  <script type="text/javascript" src="JS/bouncing.js"></script>
 </head>
-<body>
-  <div class="header">U wot</div>
+<body onload="bounce()">
+  
+  <div class="header"><image type="image/png" class="logo" src="Image/logo.png" alt="logo"></image> </div>
+  <div class="navigate">
+    <a href="/">Main Page</a>
+	<a href="/">Home</a>
+	<a href="/">News</a>
+	<a href="/">Google Search</a>
+	<a href="/">Contact</a>
+	<a href="/">About</a>
+  </div>
   <div class="mainpage">
-    <div class="exit"><a href="/">Back</a></div>
     <div class="column left">some text</div>
-	  <div class="column middle wrap">sadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsa
-	   dsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsads
-	   adsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsad
-	   sadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsad
-	   sadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsad
-	   sadsadsadsadsadsaddddddddddddddddddddddddddddddddddddddddd
+	  <div class="column middle wrap">
+	    <div class="bounce">
+		  <div class="animate" sr></div>
+		</div>
 	  </div>
     <div class="column right">some text</div>   
   </div>
-  <div class="footer"> Wot U</div>
+  <div class="footer"><div class="author">@IvanSadykov</div></div>
 </body>
 </html>
