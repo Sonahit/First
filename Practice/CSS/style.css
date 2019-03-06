@@ -29,15 +29,15 @@
 }
 
 #canvas {
-    margin: auto;
-    position: relative;
+        margin: auto;
+        position: relative;
 	background-color: #FFFFFF;
 	border: #000000 solid;
 	display: none;
 }
 
 .animate {
-    position:absolute;
+        position:absolute;
 }
 
 .column button{
@@ -48,4 +48,14 @@
 
 .column button:active{
 	color: red;
+}
+
+.news {
+        margin: 0 auto;
+        width: 99%;
+        padding: 10px;
+        background-color: #F0F0F0;
+        color: #000000;
+        border-color: #909090;
+	border-bottom-style: solid;
 }
