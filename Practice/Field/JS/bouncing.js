@@ -75,6 +75,21 @@ function initField (){
 	canvas.visibility = "visible";
 }
 
+function deleteField () {
+	let body = document.getElementById('canvas');
+	document.getElementById("crt").style.visibility = "hidden";
+	canvas.visibility = "hidden";
+	deleteSquares();
+	body.remove();
+}
+
+function deleteSquares () {
+	let body = document.getElementsByClassName('animate');
+	for( let i = body.length - 1; i >= 0; i-- ){
+		body[i].remove();
+	}
+}
+
 function checkField(){
 	setInterval(v, 5);
 	function v (){
