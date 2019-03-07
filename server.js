@@ -39,22 +39,22 @@ app.get('/', function(req,res){
     });
   });
 
-  app.get('Practice', function(req,res){
-    res.sendFile(path.join(__dirname, '/Practice','index.html'), function (err){
+  app.get('/Practice', function(req,res){
+    res.sendFile(path.join(__dirname, 'Practice','index.html'), function (err){
         if (err){
             res.status(404).send("Sorry can't find that!")
         } else {
-            console.log("Sent:", path.join(__dirname, '/Practice','/index.html') )
+            console.log("Sent:", path.join(__dirname, 'Practice','index.html') )
         }
     });
   });
  
-  app.get('Vacation',function(req,res){
-  res.sendFile(path.join(__dirname, '/Vacation' ,'/index.html'), function (err){
+  app.get('/Vacation',function(req,res){
+  res.sendFile(path.join(__dirname, 'Vacation' ,'index.html'), function (err){
     if (err){
         res.status(404).send("Sorry can't find that!")
     } else {
-        console.log("Sent:", path.join(__dirname, '/Vacation' ,'/index.html') )
+        console.log("Sent:", path.join(__dirname, 'Vacation' ,'index.html') )
     }
     }) ;
   });
