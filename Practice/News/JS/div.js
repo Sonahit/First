@@ -16,3 +16,11 @@ function addDiv( text = "hello") {
 		console.log(error);
 	}
 }
+
+
+function clearContent () {
+	let content = document.getElementById("field").getElementsByClassName('news');
+	for(let i = content.length - 1; i > -1 ; i-- ){
+		content[i].remove();
+	}
+}
