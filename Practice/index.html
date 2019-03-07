@@ -21,22 +21,22 @@
 	  <button onclick="addDiv()">addDiv</button>
 	  <form>
 	    <input type="text" id="tfm" value="What's your name?">
-		<script>
-          var x = document.getElementById("tfm");
-          x.addEventListener("focusin", onFocus);
-          x.addEventListener("focusout", outFocus);
-
-          function onFocus() {
-            document.getElementById("tfm").value = "";
-          }
-
-          function outFocus() {
-		    if ( document.getElementById("tfm").value == false ){
-		  	   document.getElementById("tfm").value = "What's your name?";  
-		    }
-		  }
-        </script>
     </form>
+    <script>
+      var x = document.getElementById("tfm");
+      x.addEventListener("focusin", onFocus);
+      x.addEventListener("focusout", outFocus);
+
+      function onFocus() {
+        document.getElementById("tfm").value = "";
+      }
+
+      function outFocus() {
+    if ( document.getElementById("tfm").value == false ){
+       document.getElementById("tfm").value = "What's your name?";  
+    }
+  }
+    </script>
     <button onclick="clearContent()">Clear main page</button>
 	</div>
 	<div class="column middle wrap" id="field"> </div>

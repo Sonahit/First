@@ -50,7 +50,7 @@
 	color: red;
 }
 
-.news .side {
+.news , .side {
         margin: 0 auto;
         width: 99%;
         padding: 10px;

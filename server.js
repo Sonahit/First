@@ -3,77 +3,62 @@ let fs = require('fs');
 let url = require("url");
 let rs = require('readline-sync');
 let port = 8080;
-port = parseInt(rs.question('Give my Port: '));
+//port = parseInt(rs.question('Give my Port: '));
 
-http.createServer( function (request, response){
-    let pathname = url.parse(request.url).pathname;
-    console.log("Request for " + pathname + " received.");
-    response.writeHead(200);
-    if(pathname == "/") {
-        html = fs.readFileSync("HTML/index.html", "utf8");
-        response.write(html);
-    } else if (pathname == "/JS/script.js") {
-        script = fs.readFileSync("JS/script.js", "utf8");
-        response.write(script);
-    } else if (pathname == "/Practice/JS/script.js") {
-        script = fs.readFileSync("Practice/JS/script.js", "utf8");
-        response.write(script);  
-    }
-    else if (pathname == "/CSS/style.css") {
-        script = fs.readFileSync("CSS/style.css", "utf8");
-        response.write(script);
-    }
-    else if (pathname == "/Image/title.ico" | pathname == "/favicon.ico") {
-        response.write(fs.readFileSync("Image/title.ico"));
-    }
-    else if (pathname == "/Vacation/") {
-        response.write(fs.readFileSync("Vacation/index.html"));
-    }
-    else if (pathname == "/Vacation/vacation.mp3") {
-        response.write(fs.readFileSync("Vacation/vacation.mp3"));
-    }
-    else if (pathname == "/Vacation/style.css") {
-        response.write(fs.readFileSync("Vacation/style.css"));
-    }
-    else if (pathname == "/Vacation/images/tree.gif") {
-        response.write(fs.readFileSync("Vacation/images/tree.gif"));
-    }
-    else if (pathname == "/Vacation/images/dance.gif") {
-        response.write(fs.readFileSync("Vacation/images/dance.gif"));
-    }
-    else if (pathname == "/Practice/") {
-        response.write(fs.readFileSync("Practice/index.html"));
-    }
-    else if (pathname == "/Practice/CSS/style.css") {
-        response.write(fs.readFileSync("Practice/CSS/style.css"));
-    }
-    else if (pathname == "/Practice/CSS/mainpage.css") {
-        response.write(fs.readFileSync("Practice/CSS/mainpage.css"));
-    }
-    else if (pathname == "/Practice/Image/logo.png") {
-        response.write(fs.readFileSync("Practice/Image/logo.png"));
-    }
-    else if (pathname == "/Practice/News/") {
-        response.write(fs.readFileSync("Practice/News/index.html"));
-    }
-    else if (pathname == "/Practice/GS/") {
-        response.write(fs.readFileSync("Practice/GS/index.html"));
-    }
-    else if (pathname == "/Practice/Contact/") {
-        response.write(fs.readFileSync("Practice/Contact/index.html"));
-    }
-    else if (pathname == "/Practice/About/") {
-        response.write(fs.readFileSync("Practice/About/index.html"));
-    }
-    else if (pathname == "/Practice/Field/") {
-        response.write(fs.readFileSync("Practice/Field/index.html"));
-    }
-    else if (pathname == "/Practice/Field/JS/bouncing.js") {
-        response.write(fs.readFileSync("Practice/Field/JS/bouncing.js"));
-    }
-    else if (pathname == "/Practice/News/JS/div.js") {
-        response.write(fs.readFileSync("Practice/News/JS/div.js"));
-    }
+const express = require('express');
+const app = express();
+const path = require('path');
+const router = express.Router();
+var favicon = require('serve-favicon');
 
-    response.end();
-}).listen(port);
+app.use(express.static(path.join(__dirname, 'public')));
+
+router.use(favicon(path.join(__dirname,'public', 'favicon.png')));
+
+app.use('/Practice', express.static(path.join(__dirname, 'Practice')));
+
+app.use('/Vacation', express.static(path.join(__dirname, 'Vacation')));
+
+app.get('/', function(req,res){
+    res.sendFile(path.join(__dirname, 'public' ,'/HTML/index.html'), function (err){
+        if (err){
+            res.status(404).send("Sorry can't find that!")
+        } else {
+            console.log("Sent:", path.join(__dirname, 'public' ,'/HTML/index.html') )
+        }
+    });
+  });
+
+  app.get('*', function(req,res){
+    res.sendFile(path.join(__dirname,'public', "error/index.html"), function (err){
+        if (err){
+            res.status(404).send("Sorry can't find that!")
+        } else {
+            console.log("Sent:", path.join(__dirname,'public', "/error/index.html") )
+        }
+    });
+  });
+
+  app.get('Practice', function(req,res){
+    res.sendFile(path.join(__dirname, '/Practice','index.html'), function (err){
+        if (err){
+            res.status(404).send("Sorry can't find that!")
+        } else {
+            console.log("Sent:", path.join(__dirname, '/Practice','/index.html') )
+        }
+    });
+  });
+ 
+  app.get('Vacation',function(req,res){
+  res.sendFile(path.join(__dirname, '/Vacation' ,'/index.html'), function (err){
+    if (err){
+        res.status(404).send("Sorry can't find that!")
+    } else {
+        console.log("Sent:", path.join(__dirname, '/Vacation' ,'/index.html') )
+    }
+    }) ;
+  });
+
+  app.listen(process.env.port || 8080);
+  
+  console.log('Running at Port 8080');
