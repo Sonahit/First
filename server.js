@@ -13,6 +13,9 @@ http.createServer( function (request, response){
     } else if (pathname == "/JS/script.js") {
         script = fs.readFileSync("JS/script.js", "utf8");
         response.write(script);
+    } else if (pathname == "/Practice/JS/script.js") {
+        script = fs.readFileSync("Practice/JS/script.js", "utf8");
+        response.write(script);  
     }
     else if (pathname == "/CSS/style.css") {
         script = fs.readFileSync("CSS/style.css", "utf8");
@@ -65,6 +68,9 @@ http.createServer( function (request, response){
     }
     else if (pathname == "/Practice/Field/JS/bouncing.js") {
         response.write(fs.readFileSync("Practice/Field/JS/bouncing.js"));
+    }
+    else if (pathname == "/Practice/News/JS/div.js") {
+        response.write(fs.readFileSync("Practice/News/JS/div.js"));
     }
 
 

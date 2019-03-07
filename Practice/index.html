@@ -3,7 +3,7 @@
 <head>
   <link rel="stylesheet" type="text/css" href="CSS/style.css"></link> 
   <link rel="stylesheet" type="text/css" href="CSS/mainpage.css"></link>
-  <script type="text/javascript" src="News/JS/div.js"></script>
+  <script text="text/javascript" src="/Practice/JS/script.js"></script>
 </head>
 <body>
   <div class="header"><image type="image/png" class="logo" src="Image/logo.png" alt="logo"></image> </div>
@@ -17,28 +17,10 @@
 	<a href="/Practice/About/">About</a>
   </div>
   <div class="mainpage">
-    <div class="column left"> 
-	  <button onclick="addDiv()">addDiv</button>
-	  <form>
-	    <input type="text" id="tfm" value="What's your name?">
-		<script>
-          var x = document.getElementById("tfm");
-          x.addEventListener("focusin", onFocus);
-          x.addEventListener("focusout", outFocus);
-
-          function onFocus() {
-            document.getElementById("tfm").value = "";
-          }
-
-          function outFocus() {
-		    if ( document.getElementById("tfm").value == false ){
-		  	   document.getElementById("tfm").value = "What's your name?";  
-		    }
-		  }
-        </script>
-	  </form>
-	</div>
-	<div class="column middle wrap" id="field"> </div>
+    <div class="column left"></div>
+	  <div class="column middle wrap" id="field">
+      <div><applet code="InetAdr.class" archive="../BackEnd/Java/src/main/net/inet/InetAdr">Not Working</applet></div>
+    </div>
     <div class="column right">some text</div>   
   </div>
   <div class="footer"><div class="author">@IvanSadykov</div></div>

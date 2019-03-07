@@ -50,12 +50,19 @@
 	color: red;
 }
 
-.news {
+.news .side {
         margin: 0 auto;
         width: 99%;
         padding: 10px;
         background-color: #F0F0F0;
         color: #000000;
         border-color: #909090;
-	border-bottom-style: solid;
+	    border-bottom-style: solid;
+}
+
+
+.side {
+	float: left;
+	margin: auto;
+	width: 80%;
 }
