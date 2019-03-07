@@ -1,11 +1,13 @@
 let http = require('http');
 let fs = require('fs');
 let url = require("url");
+let rs = require('readline-sync');
+let port = 8080;
+port = parseInt(rs.question('Give my Port'));
 
 http.createServer( function (request, response){
     let pathname = url.parse(request.url).pathname;
     console.log("Request for " + pathname + " received.");
-    
     response.writeHead(200);
     if(pathname == "/") {
         html = fs.readFileSync("HTML/index.html", "utf8");
@@ -72,7 +74,14 @@ http.createServer( function (request, response){
     else if (pathname == "/Practice/News/JS/div.js") {
         response.write(fs.readFileSync("Practice/News/JS/div.js"));
     }
+<<<<<<< HEAD
 
+=======
+    else if (pathname == "/Practice/BackEnd/PHP/info.php") {
+        response.write(fs.readFileSync("Practice/BackEnd/PHP/info.php"));
+    }
+    
+>>>>>>> 564aebb13d157eca4ef247e7645a39e5da86c9c0
 
     response.end();
-}).listen(8080);
+}).listen(port);
