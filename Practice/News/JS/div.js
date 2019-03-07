@@ -7,7 +7,7 @@ function addDiv( text = "hello") {
 	  } else {
 	      text = document.getElementById("tfm").value;	  
 		  iDiv = document.createElement('div');
-	      iDiv.className = "news";
+	      iDiv.className = " news";
 	      document.getElementById("field").appendChild(iDiv);
 	      iDiv.innerHTML = text;
 	  }
