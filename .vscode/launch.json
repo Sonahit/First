@@ -11,7 +11,7 @@
             "request": "launch",
             "name": "Launch Program",
             "program": "${workspaceFolder}/server.js",
-            // "console":"integratedTerminal"
+             "console":"integratedTerminal"
            // "program": "${workspaceFolder}/Practice/app.js"
         }
     ]

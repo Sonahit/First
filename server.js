@@ -71,7 +71,10 @@ http.createServer( function (request, response){
     else if (pathname == "/Practice/News/JS/div.js") {
         response.write(fs.readFileSync("Practice/News/JS/div.js"));
     }
-
+    else if (pathname == "/Practice/BackEnd/PHP/info.php") {
+        response.write(fs.readFileSync("Practice/BackEnd/PHP/info.php"));
+    }
+    
 
     response.end();
 }).listen(port);
