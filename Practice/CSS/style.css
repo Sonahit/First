@@ -29,8 +29,8 @@
 }
 
 #canvas {
-        margin: auto;
-        position: relative;
+    margin: auto;
+    position: relative;
 	background-color: #FFFFFF;
 	border: #000000 solid;
 	display: none;
@@ -41,9 +41,7 @@
 }
 
 .column button{
-	position: relative;
 	border-color: black;
-	width: 150px;
 }
 
 .column button:active{
@@ -60,9 +58,72 @@
 	    border-bottom-style: solid;
 }
 
-
-.side {
+.side  {
 	float: left;
 	margin: auto;
-	width: 80%;
+	width: 100%;
+	font-size: small;
 }
+
+.side #table {
+  margin: 0;
+  padding: 0;
+	text-align: left;
+	color: green;
+}
+
+
+.side #table .task {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	position: relative;
+	right: -10px;
+	visibility: hidden;
+	padding: 0px;
+	height: 0;
+	width: 0;
+	}
+
+.left .side  {
+	border-right: solid;
+}
+
+.task, .work, #table{
+	cursor: pointer;
+}
+
+.task:hover, .work:hover{
+	color: #000000;
+}
+
+.work {
+	right: -10px;
+	position: relative;
+	margin: 5px;
+	padding: 0px;
+	visibility: hidden;
+	height: 0;
+	width: 0;
+}
+
+ul {
+	list-style-position: inside;
+	list-style-type: none;
+}
+
+ul li {
+	margin: 5px;
+}
+
+ul[id="table"] {
+	height: 10px;
+}
+
+#task1 {
+	position: absolute;
+	display: inline-block; 
+	margin: 0 auto;
+	left: 40%;
+}
+

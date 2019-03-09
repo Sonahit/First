@@ -1,14 +1,10 @@
-* {
-  box-sizing: inherit;
-}
-
-html, body {
-  height: 100%;
-  width: 100%;
+html body {
+	height: 100%;
+	width: 100%;
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+	font-family: Arial, Helvetica, sans-serif;
 }
 
 .header {
@@ -40,11 +36,13 @@ body {
 
 
 .middle {
+	display: inline-block;
 	background-color: #FFFFFF;
 	color: #000000;
 	width: 70%;
 	border-color: #A0A0A0;
 	border-bottom-style: solid;
+	vertical-align: top;
 }
 
 .column {
@@ -60,7 +58,7 @@ body {
 .mainpage {
         display: flex;
         min-height: 640px;
-        height: auto;
+				height: auto;			
 }
        
 .mainpage:after {
@@ -71,6 +69,12 @@ body {
 
 .wrap{
 	word-wrap: break-word;
+}
+
+pre {
+	position: relative;
+	word-wrap: break-word;
+	white-space: pre-line;
 }
 
 .footer {
