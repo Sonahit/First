@@ -41,19 +41,12 @@ function shWork(li = 0, mode) {
   let mainpage = document.getElementsByClassName('middle')[0];
   if(mode === 's'){
     if( li === 0){
-    mainpage.innerHTML = 
-    "<div id=\"task1\">"+
-    "Get all users:<br> <form action=\"users\" method=\"get\"><button type=\"submit\" value=\"Get\">Get</button></form><br>"+  
-    "<br>Post user: <form action=\"users\" method=\"post\" target=\"_blank\">"+  
-    "<input type=\"text\" name=\"users[firstName]\" value=\"first name\">"+
-    "</input><br>"+
-    "<input type=\"text\" name=\"users[lastName]\" value=\"last name\">"+
-    "</input><br>"+
-    "<input type=\"text\" name=\"users[age]\" value=\"age\">"+
-    "</input><br>"+
-    "<input type=\"submit\">"+
-    "</input>"+
-    "</div>";
+    fetch('http://localhost:8080/Practice/Lessons/tasks/task1/workSpace.html')
+    .then( function(response) {
+      response.text().then(function(text) { 
+        mainpage.innerHTML = text;
+      });
+    })
     } else if (li === 1){
     }
   } else if (mode === 'h'){
