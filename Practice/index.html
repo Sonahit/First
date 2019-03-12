@@ -15,7 +15,6 @@
   <a href="/Practice/Field/">Field</a>
 	<a href="/Practice/Contact/">Contact</a>
   <a href="/Practice/About/">About</a>
-  <a href="/Practice/Lessons/">Lessons</a>
   </div>
   <div class="mainpage">
     <div class="column left"> 
@@ -41,7 +40,16 @@
     <button onclick="clearContent()">Clear main page</button>
 	</div>
 	<div class="column middle wrap" id="field"> </div>
-    <div class="column right">some text</div>   
+    <div class="column right">
+      <form action="/users" method="GET">
+        Login: <input type="text" id="login" name="users[login]" placeholder="Enter Username" >
+        Password: <input type="password" id="pwd"  name="users[pwd]" placeholder="Enter Password">
+        <button type="submit" id="lgn">Login</button>
+      </form>  
+      <div id="reg">
+          <a href="/reg" >Sign Up</a>
+      </div>
+    </div>   
   </div>
   <div class="footer"><div class="author">@IvanSadykov</div></div>
 </body>

@@ -127,3 +127,37 @@ ul[id="table"] {
 	left: 40%;
 }
 
+#reg, button[id="lgn"] {	
+	background-color: rgb(135, 206, 235);
+	padding: 7.5px;
+	margin: 0 auto;
+}
+
+#reg {
+	float: right;	
+}
+
+button[id="lgn"] {
+	float: left;
+}
+
+#reg a , button[id="lgn"] {
+	text-decoration: none;
+	color: #000000;
+	font-size: 16px;
+	text-align: center;
+}
+
+button[id="lgn"] {
+	border: none;
+	background-color: rgb(135, 206, 235);
+	display: inline-block;
+	cursor: pointer;
+}
+
+#reg:hover, button[id="lgn"]:hover {
+	background-color: rgba(125, 196, 224, 0.445);
+	-webkit-transition-duration: 0.3s;
+	transition-duration: 0.3s;
+}
+
