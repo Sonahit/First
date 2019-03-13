@@ -3,7 +3,7 @@
 <head>
   <link rel="stylesheet" type="text/css" href="CSS/style.css"></link> 
   <link rel="stylesheet" type="text/css" href="CSS/mainpage.css"></link>
-  <script text="text/javascript" src="/Practice/News/JS/div.js"></script>
+  <script text="text/javascript" src="News/JS/div.js"></script>
 </head>
 <body>
   <div class="header"><image type="image/png" class="logo" src="Image/logo.png" alt="logo"></image> </div>
@@ -41,16 +41,20 @@
 	</div>
 	<div class="column middle wrap" id="field"> </div>
     <div class="column right">
-      <form action="/users" method="GET">
+      <form action="/users" method="POST">
         Login: <input type="text" id="login" name="users[login]" placeholder="Enter Username" >
         Password: <input type="password" id="pwd"  name="users[pwd]" placeholder="Enter Password">
         <button type="submit" id="lgn">Login</button>
-      </form>  
-      <div id="reg">
+		<div id="reg">
           <a href="/reg" >Sign Up</a>
-      </div>
+        </div>
+      </form>  
     </div>   
   </div>
-  <div class="footer"><div class="author">@IvanSadykov</div></div>
+  <div class="footer">
+    <div class="author">
+	  @IvanSadykov
+	</div>
+  </div>
 </body>
 </html>
