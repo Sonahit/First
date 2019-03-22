@@ -4,7 +4,6 @@ let port = 8080;
 //port = parseInt(rs.question('Give my Port: '));
 // <--------------------------TEST------------------------------------>
 const log = require("./Practice/BackEnd/Login/login.js");
-console.log(`The area of a circle of radius 4 is ${log.area(4)}`);
 // <--------------------------TEST------------------------------------>
 const express = require("express");
 const app = express();
