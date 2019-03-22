@@ -137,8 +137,16 @@ ul[id="table"] {
 	float: right;	
 }
 
-button[id="lgn"] {
+button[id="lgn"],  {
 	float: left;
+}
+
+input[id="login"], input[id="pwd"] {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        border: none;
+
 }
 
 #reg a , button[id="lgn"] {
